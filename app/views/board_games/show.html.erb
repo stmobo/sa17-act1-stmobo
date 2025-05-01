@@ -1,0 +1,27 @@
+<h1><%= @game.title %></h1>
+
+<ul class="game-stats">
+    <li>
+        <span class="stats-header">Category:</span>
+        <span class="stats-value"><%= @game.category %></span>
+    </li>
+    <li>
+        <span class="stats-header">Publisher:</span>
+        <span class="stats-value"><%= @game.publisher %></span>
+    </li>
+    <li>
+        <span class="stats-header">Players:</span>
+        <span class="stats-value">
+            <% if @game.min_players == @game.max_players %>
+                <%= @game.min_players %>
+            <% else %>
+                <%= @game.min_players %> to <%= @game.max_players %>
+            <% end %>
+        </span>
+    </li>
+</ul>
+
+<h2>Description</h2>
+<p><%= @game.description %></p>
+
+<%= link_to "Return to Index", board_games_path, class: "return-link"  %>

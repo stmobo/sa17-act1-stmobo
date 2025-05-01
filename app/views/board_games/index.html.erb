@@ -1,0 +1,23 @@
+<h1>Available Board Games</h1>
+
+<table class="game-listing">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Players</th>
+            <th>Publisher</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @games.each do |game| %>
+            <tr class="listing-entry">
+                <td><%= link_to game.title, board_game_path(game) %></td>
+                <td><%= game.category %></td>
+                <td class="players-listing"><%= game.min_players %> - <%= game.max_players %></td>
+                <td><%= game.publisher %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
